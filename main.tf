@@ -15,14 +15,16 @@ locals {
   )
 
   logs = {
-    for category in local.log_categories : category => {
+    for category in local.log_categories : 
+    category => {
       enabled        = var.enabled
       retention_days = var.retention_days
     }
   }
 
   metrics = {
-    for metric in local.metric_categories : metric => {
+    for metric in local.metric_categories : 
+    metric => {
       enabled        = var.enabled
       retention_days = var.retention_days
     }
